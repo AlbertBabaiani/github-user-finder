@@ -1,0 +1,7 @@
+<form (ngSubmit)="submit()">
+  <img src="assets/images/icon-search.svg" alt="Search Icon" class="icon" />
+
+  <input type="text" name="user" [(ngModel)]="searched_user" placeholder="Search GitHub Username" />
+
+  <button type="button" [disabled]="searched_user().trim().length === 0">Search</button>
+</form>

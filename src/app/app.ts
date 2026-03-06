@@ -4,10 +4,11 @@ import { User } from './core/user';
 import { UserInfo } from './components/user-info/user-info';
 import { Header } from './components/header/header';
 import { ThemeChanger } from './core/theme-changer';
+import { Search } from './components/search/search';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserInfo, Header],
+  imports: [RouterOutlet, UserInfo, Header, Search],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -16,18 +17,15 @@ export class App {
   private themeChanger = inject(ThemeChanger);
   isDark = this.themeChanger.isDark;
 
-  private service = inject(User);
+  private user = inject(User);
 
-  searched_user = this.service.searched_user;
+  searched_user = this.user.searched_user;
 
-  constructor() {
-    this.service.searchUser();
-    setTimeout(() => {
-      console.log(this.searched_user());
-    }, 1000);
+  changeTheme(new_theme: boolean): void {
+    this.themeChanger.changeTheme(new_theme);
   }
 
-  changeTheme(new_theme: boolean) {
-    this.themeChanger.changeTheme(new_theme);
+  searchUser(userName: string): void {
+    this.user.searchUser(userName);
   }
 }

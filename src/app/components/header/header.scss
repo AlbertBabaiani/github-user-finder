@@ -31,7 +31,9 @@ button {
   transition: outline 0.2s;
 
   outline: 0px solid var(--primary-color);
-  outline-offset: 5px;
+  outline-offset: 1rem;
+
+  border-radius: 0.3rem;
 
   &:focus-visible {
     outline-width: 2px;

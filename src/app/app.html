@@ -3,5 +3,7 @@
 </header>
 
 <main>
+  <app-search (searchUser)="searchUser($event)" />
+
   <app-user-info [user]="searched_user()" />
 </main>
