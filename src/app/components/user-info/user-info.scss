@@ -7,12 +7,27 @@
 
 // Profile Start
 
+.profile {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1.9rem;
+  align-items: center;
+}
+
+.profile-img {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 100vmax;
+  }
+}
+
 h1 {
   font-size: 1.6rem;
   font-weight: bold;
 }
 
-.nickname {
+.login {
   font-size: 1.3rem;
   color: var(--primary-color);
 }
@@ -31,6 +46,10 @@ h1 {
   color: var(--text-secondary);
 
   margin-block: 3.3rem 2.3rem;
+
+  &.disabled {
+    opacity: 0.75;
+  }
 }
 
 // Stats Start
@@ -76,14 +95,20 @@ h1 {
 }
 
 .detail {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 2.4rem 1fr;
   gap: 1.3rem;
+
+  &.disabled {
+    opacity: 0.5;
+  }
 
   p,
   a {
     font-size: 1.3rem;
     color: var(--text-secondary);
+    text-decoration: none;
   }
 }
 

@@ -18,5 +18,8 @@ export class App {
 
   constructor() {
     this.service.searchUser();
+    setTimeout(() => {
+      console.log(this.searched_user());
+    }, 1000);
   }
 }

@@ -1,55 +1,66 @@
 <div class="container">
   <section class="profile">
-    <h1>The Octocat</h1>
-    <p class="nickname">@octocat</p>
-    <p class="created">Joined 25 Jan 2011</p>
+    <div class="profile-img">
+      <img [src]="user()?.avatar_url" alt="Profile Image" />
+    </div>
+
+    <div class="content">
+      <h1>{{ user()?.name }}</h1>
+      <p class="login">{{ `@${user()?.login ?? 'No Login'}` }}</p>
+      <p class="created">Joined {{ user()?.created_at | date: 'dd MMM yyyy' }}</p>
+    </div>
   </section>
 
-  <p class="description">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
-    eros.
+  <p class="description" [class.disabled]="!user()?.bio">
+    {{ user()?.bio ?? 'This profile has no bio' }}
   </p>
 
   <section class="stats">
     <div class="stat">
       <h3>Repos</h3>
-      <span>0</span>
+      <span>{{ user()?.public_repos ?? 0 }}</span>
     </div>
 
     <div class="stat">
       <h3>FolloWers</h3>
-      <span>0</span>
+      <span>{{ user()?.followers ?? 0 }}</span>
     </div>
 
     <div class="stat">
       <h3>Following</h3>
-      <span>0</span>
+      <span>{{ user()?.following ?? 0 }}</span>
     </div>
   </section>
 
   <ul class="details">
-    <li class="detail">
+    <li class="detail" [class.disabled]="!user()?.location">
       <img src="assets\images\icon-location.svg" alt="Based In" />
 
-      <p>San Francisco</p>
+      <p>{{ user()?.location ?? 'Not Available' }}</p>
     </li>
 
-    <li class="detail">
+    <li class="detail" [class.disabled]="!user()?.company">
       <img src="assets\images\icon-website.svg" alt="Based In" />
 
-      <a href="#" target="_blank">https://github.blog</a>
+      @if (user()?.blog) {
+        <a [href]="user()?.blog" target="_blank">
+          {{ user()?.blog }}
+        </a>
+      } @else {
+        <p class="disabled">Not Available</p>
+      }
     </li>
 
-    <li class="detail">
+    <li class="detail" [class.disabled]="!user()?.twitter_username">
       <img src="assets\images\icon-twitter.svg" alt="Based In" />
 
-      <p>Not Available</p>
+      <p>{{ user()?.twitter_username ?? 'Not Available' }}</p>
     </li>
 
-    <li class="detail">
+    <li class="detail" [class.disabled]="!user()?.company">
       <img src="assets\images\icon-company.svg" alt="Based In" />
 
-      <p>@github</p>
+      <p>{{ user()?.company ? `@${user()?.company}` : 'Not Available' }}</p>
     </li>
   </ul>
 </div>

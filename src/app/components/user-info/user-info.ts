@@ -1,12 +1,13 @@
 import { Component, input } from '@angular/core';
 import { UserModel } from '../../shared/user_model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-user-info',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './user-info.html',
   styleUrl: './user-info.scss',
 })
 export class UserInfo {
-  user = input.required<any | null>();
+  user = input.required<UserModel | null>();
 }
