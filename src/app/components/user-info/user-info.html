@@ -5,7 +5,7 @@
     </div>
 
     <div class="content">
-      <h1>{{ user()?.name }}</h1>
+      <h1>{{ user()?.name ?? 'No Name' }}</h1>
       <p class="login">{{ `@${user()?.login ?? 'No Login'}` }}</p>
       <p class="created">Joined {{ user()?.created_at | date: 'dd MMM yyyy' }}</p>
     </div>

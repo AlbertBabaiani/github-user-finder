@@ -7,6 +7,11 @@
 
   @if (searched_user()) {
     <app-user-info @expandFade [user]="searched_user()" />
+  } @else if (err_msg()) {
+    <div class="error-card" @expandFade>
+      <h2>Oops! User not found.</h2>
+      <p>We couldn't find a GitHub account with that username. Check the spelling and try again.</p>
+    </div>
   }
 </main>
 

@@ -31,6 +31,8 @@ main {
   }
 }
 
+// Loading Start
+
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -69,3 +71,48 @@ main {
     transform: rotate(360deg);
   }
 }
+
+// Loading End
+
+// Error Start
+
+/* Add this to your app.scss */
+
+.error-card {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  padding: 4rem 2.4rem;
+  text-align: center;
+
+  margin-top: 1.6rem;
+
+  h2 {
+    font-size: 2rem;
+    color: rgb(201, 10, 10);
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 2.4rem;
+    padding: 6rem 4rem;
+
+    h2 {
+      font-size: 2.4rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+// Error End
