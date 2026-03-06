@@ -10,4 +10,12 @@ import { DatePipe } from '@angular/common';
 })
 export class UserInfo {
   user = input.required<UserModel | null>();
+
+  formatUrl(url: string | null | undefined): string {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    return `https://${url}`;
+  }
 }

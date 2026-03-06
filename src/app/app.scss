@@ -7,9 +7,11 @@ header {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.6rem;
+
+  grid-template-rows: 1fr auto;
 }
 
 @media (min-width: 768px) {
@@ -29,5 +31,44 @@ main {
   header,
   main {
     max-width: 75rem;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(3px);
+
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 5px solid var(--card-color);
+  border-bottom-color: var(--primary-color);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

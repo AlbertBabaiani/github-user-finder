@@ -16,17 +16,25 @@ export class User {
   private _err_msg = signal<boolean>(false);
   readonly err_msg = this._err_msg.asReadonly();
 
+  private _isLoading = signal<boolean>(false);
+  readonly isLoading = this._isLoading.asReadonly();
+
   searchUser(searched_user: string): void {
     this._err_msg.set(false);
+    this._isLoading.set(true);
+    this._searched_user.set(null);
+
     this.http
       .get<UserModel>(this.BASE_URL + searched_user)
       .pipe(take(1))
       .subscribe({
         next: (data) => {
           this._searched_user.set(data);
+          this._isLoading.set(false);
         },
         error: () => {
           this._err_msg.set(true);
+          this._isLoading.set(false);
         },
       });
   }

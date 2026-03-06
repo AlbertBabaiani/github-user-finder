@@ -6,11 +6,21 @@ import { Header } from './components/header/header';
 import { ThemeChanger } from './core/theme-changer';
 import { Search } from './components/search/search';
 
+import { trigger, transition, style, animate } from '@angular/animations';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, UserInfo, Header, Search],
   templateUrl: './app.html',
   styleUrl: './app.scss',
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms ease-in', style({ opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class App {
   protected readonly title = signal('github-user-finder');
@@ -21,6 +31,7 @@ export class App {
 
   searched_user = this.user.searched_user;
   err_msg = this.user.err_msg;
+  isLoading = this.user.isLoading;
 
   changeTheme(new_theme: boolean): void {
     this.themeChanger.changeTheme(new_theme);

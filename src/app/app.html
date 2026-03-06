@@ -6,6 +6,12 @@
   <app-search (searchUser)="searchUser($event)" />
 
   @if (searched_user()) {
-    <app-user-info [user]="searched_user()" />
+    <app-user-info @fadeInOut [user]="searched_user()" />
   }
 </main>
+
+@if (isLoading()) {
+  <div class="loading-overlay">
+    <span class="loader"></span>
+  </div>
+}

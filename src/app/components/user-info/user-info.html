@@ -43,7 +43,7 @@
       <img src="assets/images/icon-website.svg" alt="Based In" />
 
       @if (user()?.blog) {
-        <a [href]="'https://' + user()?.blog" target="_blank">
+        <a [href]="formatUrl(user()?.blog)" target="_blank">
           {{ user()?.blog }}
         </a>
       } @else {
