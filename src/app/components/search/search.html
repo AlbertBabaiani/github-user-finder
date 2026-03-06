@@ -3,5 +3,5 @@
 
   <input type="text" name="user" [(ngModel)]="searched_user" placeholder="Search GitHub Username" />
 
-  <button type="button" [disabled]="searched_user().trim().length === 0">Search</button>
+  <button type="submit" [disabled]="searched_user().trim().length === 0">Search</button>
 </form>

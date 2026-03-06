@@ -7,6 +7,10 @@ img {
   left: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
+
+  @media (min-width: 768px) {
+    left: 3.2rem;
+  }
 }
 
 input {
@@ -28,17 +32,14 @@ input {
 
   caret-color: var(--primary-color);
 
-  outline: 0px solid var(--primary-color);
-  outline-offset: 6px;
-
-  transition: outline 0.2s;
-
   &::placeholder {
     color: var(--text-secondary);
   }
 
-  &:focus-visible {
-    outline-width: 3px;
+  @media (min-width: 768px) {
+    padding-inline: 8rem 13rem;
+    font-size: 1.8rem;
+    height: 6.9rem;
   }
 }
 
@@ -81,5 +82,11 @@ button {
 
   &:focus-visible {
     outline-width: 2px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+    height: 5rem;
+    padding-inline: 2.4rem;
   }
 }

@@ -20,6 +20,7 @@ export class App {
   private user = inject(User);
 
   searched_user = this.user.searched_user;
+  err_msg = this.user.err_msg;
 
   changeTheme(new_theme: boolean): void {
     this.themeChanger.changeTheme(new_theme);

@@ -13,13 +13,20 @@ export class User {
   private _searched_user = signal<UserModel | null>(null);
   readonly searched_user = this._searched_user.asReadonly();
 
+  private _err_msg = signal<boolean>(false);
+  readonly err_msg = this._err_msg.asReadonly();
+
   searchUser(searched_user: string): void {
+    this._err_msg.set(false);
     this.http
       .get<UserModel>(this.BASE_URL + searched_user)
       .pipe(take(1))
       .subscribe({
         next: (data) => {
           this._searched_user.set(data);
+        },
+        error: () => {
+          this._err_msg.set(true);
         },
       });
   }

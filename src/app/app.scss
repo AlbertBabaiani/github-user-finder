@@ -11,3 +11,23 @@ main {
   flex-direction: column;
   gap: 1.6rem;
 }
+
+@media (min-width: 768px) {
+  header,
+  main {
+    width: 100%;
+    max-width: 60rem;
+    margin-inline: auto;
+  }
+
+  main {
+    gap: 2.4rem;
+  }
+}
+
+@media (min-width: 1440) {
+  header,
+  main {
+    max-width: 75rem;
+  }
+}
