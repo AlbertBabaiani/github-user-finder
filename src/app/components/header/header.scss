@@ -28,12 +28,18 @@ button {
 
   font-family: var(--font);
 
-  transition: outline 0.2s;
+  transition:
+    outline 0.2s,
+    opacity 0.2s;
 
   outline: 0px solid var(--primary-color);
   outline-offset: 1rem;
 
   border-radius: 0.3rem;
+
+  &:hover {
+    opacity: 0.5;
+  }
 
   &:focus-visible {
     outline-width: 2px;
