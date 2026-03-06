@@ -24,10 +24,11 @@ main {
   }
 }
 
-@media (min-width: 1440) {
+@media (min-width: 1440px) {
   header,
   main {
-    max-width: 75rem;
+    max-width: none;
+    width: 73rem;
   }
 }
 

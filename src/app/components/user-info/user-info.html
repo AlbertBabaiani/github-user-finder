@@ -5,8 +5,10 @@
     </div>
 
     <div class="content">
-      <h1>{{ user()?.name ?? 'No Name' }}</h1>
-      <p class="login">{{ `@${user()?.login ?? 'No Login'}` }}</p>
+      <div class="content-block">
+        <h1>{{ user()?.name ?? 'No Name' }}</h1>
+        <p class="login">{{ `@${user()?.login ?? 'No Login'}` }}</p>
+      </div>
       <p class="created">Joined {{ user()?.created_at | date: 'dd MMM yyyy' }}</p>
     </div>
   </section>
@@ -34,13 +36,13 @@
 
   <ul class="details">
     <li class="detail" [class.disabled]="!user()?.location">
-      <img src="assets/images/icon-location.svg" alt="Based In" />
+      <img class="detail-img" src="assets/images/icon-location.svg" alt="Based In" />
 
       <p>{{ user()?.location ?? 'Not Available' }}</p>
     </li>
 
     <li class="detail" [class.disabled]="!user()?.blog">
-      <img src="assets/images/icon-website.svg" alt="Based In" />
+      <img class="detail-img" src="assets/images/icon-website.svg" alt="Based In" />
 
       @if (user()?.blog) {
         <a [href]="formatUrl(user()?.blog)" target="_blank">
@@ -52,13 +54,13 @@
     </li>
 
     <li class="detail" [class.disabled]="!user()?.twitter_username">
-      <img src="assets/images/icon-twitter.svg" alt="Based In" />
+      <img class="detail-img" src="assets/images/icon-twitter.svg" alt="Based In" />
 
       <p>{{ user()?.twitter_username ?? 'Not Available' }}</p>
     </li>
 
     <li class="detail" [class.disabled]="!user()?.company">
-      <img src="assets/images/icon-company.svg" alt="Based In" />
+      <img class="detail-img" src="assets/images/icon-company.svg" alt="Based In" />
 
       <p>{{ user()?.company ?? 'Not Available' }}</p>
     </li>

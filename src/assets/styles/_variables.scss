@@ -27,4 +27,8 @@
   --logo-color: #fff;
 
   --shadow: none;
+
+  .detail-img {
+    filter: brightness(0) invert(1);
+  }
 }
