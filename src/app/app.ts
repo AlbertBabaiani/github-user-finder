@@ -14,10 +14,21 @@ import { trigger, transition, style, animate } from '@angular/animations';
   templateUrl: './app.html',
   styleUrl: './app.scss',
   animations: [
-    trigger('fadeInOut', [
+    trigger('expandFade', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('400ms ease-in', style({ opacity: 1 })),
+        style({ height: '0px', opacity: 0, marginTop: '0px', overflow: 'hidden' }),
+
+        animate(
+          '500ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ height: '*', opacity: 1, marginTop: '*' }),
+        ),
+      ]),
+      transition(':leave', [
+        style({ overflow: 'hidden' }),
+        animate(
+          '400ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ height: '0px', opacity: 0, marginTop: '0px' }),
+        ),
       ]),
     ]),
   ],

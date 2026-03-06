@@ -6,7 +6,7 @@
   <app-search (searchUser)="searchUser($event)" />
 
   @if (searched_user()) {
-    <app-user-info @fadeInOut [user]="searched_user()" />
+    <app-user-info @expandFade [user]="searched_user()" />
   }
 </main>
 

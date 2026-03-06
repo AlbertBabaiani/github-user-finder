@@ -22,7 +22,7 @@ export class User {
   searchUser(searched_user: string): void {
     this._err_msg.set(false);
     this._isLoading.set(true);
-    this._searched_user.set(null);
+    // this._searched_user.set(null);
 
     this.http
       .get<UserModel>(this.BASE_URL + searched_user)
@@ -33,6 +33,7 @@ export class User {
           this._isLoading.set(false);
         },
         error: () => {
+          this._searched_user.set(null);
           this._err_msg.set(true);
           this._isLoading.set(false);
         },
