@@ -12,4 +12,19 @@
 
   --shadow: 0 1.6rem 3rem -1rem rgba(70, 96, 187, 0.2);
   --radius: 1.5rem;
+
+  --font: 'Space Mono', monospace;
+}
+
+.dark {
+  --body-bg: #141d2f;
+  --card-color: #1e2a47;
+
+  --text-color: #fff;
+  --text-secondary: #fff;
+  --gray: #fff;
+
+  --logo-color: #fff;
+
+  --shadow: none;
 }

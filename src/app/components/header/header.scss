@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--logo-color);
+}
+
+button {
+  border: unset;
+  background-color: transparent;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  cursor: pointer;
+
+  font-family: var(--font);
+
+  transition: outline 0.2s;
+
+  outline: 0px solid var(--primary-color);
+  outline-offset: 5px;
+
+  &:focus-visible {
+    outline-width: 2px;
+  }
+}

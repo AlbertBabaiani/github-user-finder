@@ -34,13 +34,13 @@
 
   <ul class="details">
     <li class="detail" [class.disabled]="!user()?.location">
-      <img src="assets\images\icon-location.svg" alt="Based In" />
+      <img src="assets/images/icon-location.svg" alt="Based In" />
 
       <p>{{ user()?.location ?? 'Not Available' }}</p>
     </li>
 
     <li class="detail" [class.disabled]="!user()?.company">
-      <img src="assets\images\icon-website.svg" alt="Based In" />
+      <img src="assets/images/icon-website.svg" alt="Based In" />
 
       @if (user()?.blog) {
         <a [href]="user()?.blog" target="_blank">
@@ -52,13 +52,13 @@
     </li>
 
     <li class="detail" [class.disabled]="!user()?.twitter_username">
-      <img src="assets\images\icon-twitter.svg" alt="Based In" />
+      <img src="assets/images/icon-twitter.svg" alt="Based In" />
 
       <p>{{ user()?.twitter_username ?? 'Not Available' }}</p>
     </li>
 
     <li class="detail" [class.disabled]="!user()?.company">
-      <img src="assets\images\icon-company.svg" alt="Based In" />
+      <img src="assets/images/icon-company.svg" alt="Based In" />
 
       <p>{{ user()?.company ? `@${user()?.company}` : 'Not Available' }}</p>
     </li>

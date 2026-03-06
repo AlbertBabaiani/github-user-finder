@@ -1,4 +1,6 @@
-<header></header>
+<header>
+  <app-header [isDark]="isDark()" (changeTheme)="changeTheme($event)" />
+</header>
 
 <main>
   <app-user-info [user]="searched_user()" />

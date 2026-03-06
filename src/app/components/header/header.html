@@ -1,0 +1,9 @@
+<p class="logo">devfinder</p>
+
+<button type="button" (click)="changeTheme.emit(!isDark())">
+  {{ isDark() ? 'LIGHT' : 'DARK' }}
+
+  <img [src]="'assets/images/icon-' + (isDark() ? 'sun' : 'moon') + '.svg'" alt="Toggle Theme" />
+</button>
+
+<!-- Todo Hover effect -->
