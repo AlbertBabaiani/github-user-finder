@@ -1,0 +1,90 @@
+.container {
+  padding: 3.2rem 2.4rem 4.8rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background-color: var(--card-color);
+}
+
+// Profile Start
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.nickname {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.created {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+  color: var(--gray);
+}
+
+// Profile End
+
+.description {
+  font-size: 1.3rem;
+  line-height: 1.92;
+  color: var(--text-secondary);
+
+  margin-block: 3.3rem 2.3rem;
+}
+
+// Stats Start
+
+.stats {
+  background-color: var(--body-bg);
+  border-radius: var(--radius);
+
+  padding-block: 1.9rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.8rem;
+
+  h3 {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+
+  span {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+}
+
+// Stats End
+
+// Details Start
+
+.details {
+  list-style: none;
+  display: grid;
+  gap: 1.6rem;
+
+  margin-top: 2.4rem;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+
+  p,
+  a {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+  }
+}
+
+// Details End
