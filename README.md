@@ -50,21 +50,29 @@ This project is a showcase of modern front-end web development, utilizing the ab
 
 <div align="center"> 
   <h3>Desktop Experience</h3>
-  <img src="src/assets/previews/desktop-preview.png" alt="Desktop Interface showing DevFinder" width="800" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+  <img src="src/assets/previews/desktop-preview.png" alt="Desktop Interface showing DevFinder" width="800" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); margin-bottom: 20px;"/>
 </div>
 
 <br/>
 
-<div align="center" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; align-items: start;">
-  <div>
-    <h3>Tablet View</h3>
-    <img src="src/assets/previews/tablet-preview.png" alt="Dark Mode Tablet Interface" width="450" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
-  </div>
-  <div>
-    <h3>Phone View</h3>
-    <img src="src/assets/previews/mobile-preview.png" alt="Dark Mode Phone Interface showing the search bar and profile" height="550" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
-  </div>
+<div align="center">
+  <h3>Responsive & Mobile Views</h3>
 </div>
+
+<table align="center" style="border: none; background-color: transparent;">
+  <tr align="center">
+    <td><b>Tablet View</b></td>
+    <td><b>Phone View</b></td>
+  </tr>
+  <tr align="center" valign="top">
+    <td>
+      <img src="src/assets/previews/tablet-preview.png" alt="Dark Mode Tablet Interface" width="450" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+    </td>
+    <td>
+      <img src="src/assets/previews/mobile-preview.png" alt="Dark Mode Phone Interface showing the search bar and profile" width="250" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+    </td>
+  </tr>
+</table>
 
 ---
 
